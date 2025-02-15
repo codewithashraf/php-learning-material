@@ -1,4 +1,4 @@
-<!--  Connection with mysqli class  -->
+
 
 
 <?php
@@ -21,7 +21,7 @@
 
       ?> 
 
-<!--  Connection with PDO class  -->
+
 
 <?php
 
@@ -33,6 +33,7 @@ $database = 'localapp';
 try{
   $conn = new PDO("mysql:host=$host;dbname=$database;charset=utf8mb4", $username, $password);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   // echo 'database successfully connected';
 }
 catch(PDOException $err){
